@@ -1,0 +1,2205 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kem Nghệ Mật Ong Thorakao – Thiên Nhiên Thuần Khiết</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --gold: #C8941A;
+      --gold-light: #F0C842;
+      --gold-pale: #FDF3D0;
+      --honey: #E8A020;
+      --cream: #FBF6E8;
+      --dark: #1A1208;
+      --turmeric: #D4821A;
+      --turmeric-deep: #8B4A0A;
+      --green-deep: #1A3A1A;
+      --white: #FFFFFF;
+      --text-muted: #7A6A4A;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ——— NAV ——— */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 3rem;
+      background: rgba(251, 246, 232, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(200, 148, 26, 0.15);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--turmeric-deep);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-logo span {
+      color: var(--gold);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav ul a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--dark);
+      border: none;
+      padding: 0.65rem 1.6rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover {
+      background: var(--honey);
+      transform: translateY(-1px);
+    }
+
+    /* ——— HERO ——— */
+    #hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #hero-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 6rem;
+      max-width: 600px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 2rem;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      font-weight: 900;
+      color: var(--turmeric-deep);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #5A4A2A;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+      max-width: 420px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--turmeric), var(--gold));
+      color: white;
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 30px rgba(200, 148, 26, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(200, 148, 26, 0.5);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--turmeric-deep);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border: 1.5px solid var(--gold);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-ghost:hover {
+      background: var(--gold-pale);
+    }
+
+    .hero-price-badge {
+      position: absolute;
+      right: 5rem;
+      bottom: 5rem;
+      z-index: 2;
+      background: var(--dark);
+      color: var(--gold-light);
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .hero-price-badge .from {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      opacity: 0.7;
+      text-transform: uppercase;
+    }
+
+    .hero-price-badge .price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-price-badge .unit {
+      font-size: 0.7rem;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* ——— PARTICLES BG ——— */
+    .particles-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(240, 200, 66, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(212, 130, 26, 0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* ——— MARQUEE ——— */
+    .marquee-strip {
+      background: var(--dark);
+      color: var(--gold-light);
+      padding: 0.85rem 0;
+      overflow: hidden;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .marquee-inner {
+      display: flex;
+      gap: 0;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+    }
+
+    .marquee-inner span {
+      padding: 0 3rem;
+    }
+
+    .marquee-inner .dot {
+      color: var(--honey);
+      font-size: 1.2rem;
+      vertical-align: middle;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ——— SECTION BASE ——— */
+    section {
+      padding: 7rem 6rem;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 1.5rem;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: var(--turmeric-deep);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 520px;
+    }
+
+    /* ——— INGREDIENTS ——— */
+    #ingredients {
+      background: var(--dark);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #ingredients::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(200, 148, 26, 0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    #ingredients .section-title {
+      color: var(--gold-light);
+    }
+
+    #ingredients .section-sub {
+      color: rgba(251, 246, 232, 0.6);
+    }
+
+    .ingredients-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 4rem;
+      align-items: center;
+    }
+
+    .ingredient-visual {
+      position: relative;
+      height: 480px;
+    }
+
+    #ingredients-canvas {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .ingredient-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .ingredient-card {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 1.5rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(200, 148, 26, 0.15);
+      transition: background 0.3s, transform 0.3s;
+      cursor: default;
+    }
+
+    .ingredient-card:hover {
+      background: rgba(200, 148, 26, 0.08);
+      transform: translateX(8px);
+    }
+
+    .ingredient-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .ingredient-icon.turmeric {
+      background: rgba(212, 130, 26, 0.2);
+    }
+
+    .ingredient-icon.honey {
+      background: rgba(232, 160, 32, 0.2);
+    }
+
+    .ingredient-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .ingredient-text p {
+      font-size: 0.9rem;
+      color: rgba(251, 246, 232, 0.65);
+      line-height: 1.65;
+    }
+
+    .ingredient-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 50px;
+      border: 1px solid rgba(200, 148, 26, 0.4);
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ——— BENEFITS ——— */
+    #benefits {
+      background: var(--cream);
+    }
+
+    .benefits-intro {
+      max-width: 700px;
+      margin-bottom: 4rem;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .benefit-card {
+      padding: 2rem 1.75rem;
+      background: white;
+      border-radius: 20px;
+      border: 1px solid rgba(200, 148, 26, 0.12);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--turmeric), var(--gold));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(200, 148, 26, 0.15);
+    }
+
+    .benefit-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .benefit-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: rgba(200, 148, 26, 0.12);
+      font-family: 'Playfair Display', serif;
+      position: absolute;
+      top: 1rem;
+      right: 1.2rem;
+    }
+
+    .benefit-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .benefit-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--turmeric-deep);
+      margin-bottom: 0.6rem;
+    }
+
+    .benefit-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ——— 3D VIEWER SECTION ——— */
+    #viewer {
+      background: linear-gradient(160deg, #0e0a02 0%, #1a1208 50%, #0d0903 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 100vh;
+      padding: 0;
+      align-items: stretch;
+    }
+
+    .viewer-canvas-wrap {
+      position: relative;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #model-canvas {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+    }
+
+    .viewer-controls {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.75rem;
+      z-index: 10;
+    }
+
+    .ctrl-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(200, 148, 26, 0.15);
+      border: 1px solid rgba(200, 148, 26, 0.3);
+      color: var(--gold-light);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .ctrl-btn:hover {
+      background: rgba(200, 148, 26, 0.3);
+    }
+
+    .ctrl-btn.active {
+      background: rgba(200, 148, 26, 0.4);
+      border-color: var(--gold);
+    }
+
+    .viewer-info {
+      padding: 5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .viewer-info .section-label {
+      color: rgba(200, 148, 26, 0.7);
+    }
+
+    .viewer-info .section-label::before {
+      background: rgba(200, 148, 26, 0.5);
+    }
+
+    .viewer-info .section-title {
+      color: var(--gold-light);
+    }
+
+    .viewer-info .section-sub {
+      color: rgba(251, 246, 232, 0.55);
+    }
+
+    .specs-list {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(200, 148, 26, 0.12);
+    }
+
+    .spec-row:last-child {
+      border-bottom: none;
+    }
+
+    .spec-label {
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      color: rgba(251, 246, 232, 0.4);
+      text-transform: uppercase;
+    }
+
+    .spec-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--gold-light);
+    }
+
+    .model-switcher {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .model-btn {
+      padding: 0.55rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      border: 1px solid rgba(200, 148, 26, 0.3);
+      color: rgba(251, 246, 232, 0.6);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    .model-btn:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .model-btn.active {
+      background: rgba(200, 148, 26, 0.2);
+      color: var(--gold-light);
+      border-color: var(--gold);
+    }
+
+    .drag-hint {
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      color: rgba(200, 148, 26, 0.5);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      animation: pulse-opacity 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-opacity {
+
+      0%,
+      100% {
+        opacity: 0.4
+      }
+
+      50% {
+        opacity: 1
+      }
+    }
+
+    /* ——— COMPARE ——— */
+    #compare {
+      background: white;
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 3rem;
+      margin-top: 3.5rem;
+      align-items: start;
+    }
+
+    .compare-card {
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .compare-header {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .compare-card.old .compare-header {
+      background: #F5F5F0;
+    }
+
+    .compare-card.new .compare-header {
+      background: linear-gradient(135deg, var(--turmeric), var(--gold));
+    }
+
+    .compare-card.old h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #888;
+    }
+
+    .compare-card.new h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .compare-badge {
+      font-size: 0.7rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    .compare-card.old .compare-badge {
+      background: rgba(0, 0, 0, 0.08);
+      color: #888;
+    }
+
+    .compare-card.new .compare-badge {
+      background: rgba(255, 255, 255, 0.25);
+      color: white;
+    }
+
+    .compare-body {
+      padding: 1.75rem 2rem;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-top: none;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .compare-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      font-size: 0.9rem;
+    }
+
+    .compare-row:last-child {
+      border-bottom: none;
+    }
+
+    .compare-row .key {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .compare-row .val {
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .compare-card.new .compare-row .val {
+      color: var(--turmeric-deep);
+    }
+
+    .check {
+      color: #2D9A5F;
+      font-weight: 700;
+    }
+
+    .cross {
+      color: #C0392B;
+    }
+
+    .compare-text {
+      padding: 1.5rem 0 0;
+    }
+
+    .compare-text p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+
+    /* ——— PRICING ——— */
+    #pricing {
+      background: var(--dark);
+      text-align: center;
+    }
+
+    #pricing .section-label {
+      justify-content: center;
+    }
+
+    #pricing .section-label::before {
+      display: none;
+    }
+
+    #pricing .section-title {
+      color: var(--gold-light);
+      text-align: center;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 3.5rem auto 0;
+    }
+
+    .price-card {
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border: 1px solid rgba(200, 148, 26, 0.15);
+      background: rgba(255, 255, 255, 0.03);
+      transition: transform 0.3s, border-color 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card.featured {
+      background: linear-gradient(160deg, rgba(200, 148, 26, 0.15), rgba(212, 130, 26, 0.1));
+      border-color: rgba(200, 148, 26, 0.5);
+      transform: scale(1.04);
+    }
+
+    .price-card:hover:not(.featured) {
+      transform: scale(1.02);
+      border-color: rgba(200, 148, 26, 0.3);
+    }
+
+    .price-card .badge {
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, var(--turmeric), var(--gold));
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.35rem 1.2rem;
+      border-radius: 0 0 12px 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .price-card .type {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .price-card .amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .price-card .per {
+      font-size: 0.8rem;
+      color: rgba(251, 246, 232, 0.4);
+      margin-bottom: 1.5rem;
+      margin-top: 0.25rem;
+    }
+
+    .price-card .original {
+      text-decoration: line-through;
+      color: rgba(251, 246, 232, 0.3);
+      font-size: 0.85rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .price-card .saving {
+      color: #2ecc71;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .price-features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .price-features li {
+      font-size: 0.85rem;
+      color: rgba(251, 246, 232, 0.6);
+      padding: 0.45rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .price-features li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.6rem;
+      margin-top: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .price-cta {
+      width: 100%;
+      padding: 0.9rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .price-cta.outlined {
+      background: transparent;
+      border: 1.5px solid rgba(200, 148, 26, 0.4);
+      color: var(--gold);
+    }
+
+    .price-cta.outlined:hover {
+      background: rgba(200, 148, 26, 0.1);
+    }
+
+    .price-cta.filled {
+      background: linear-gradient(135deg, var(--turmeric), var(--gold));
+      border: none;
+      color: white;
+      box-shadow: 0 6px 25px rgba(200, 148, 26, 0.35);
+    }
+
+    .price-cta.filled:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 35px rgba(200, 148, 26, 0.5);
+    }
+
+    .limited-note {
+      margin-top: 2rem;
+      font-size: 0.82rem;
+      color: rgba(251, 246, 232, 0.35);
+      text-align: center;
+    }
+
+    /* ——— DISTRIBUTION ——— */
+    #distribution {
+      background: var(--cream);
+    }
+
+    .channel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .channel-card {
+      padding: 2rem;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid rgba(200, 148, 26, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .channel-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(200, 148, 26, 0.12);
+    }
+
+    .channel-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .channel-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--turmeric-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .channel-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .channel-platforms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .platform-tag {
+      font-size: 0.72rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 50px;
+      background: var(--gold-pale);
+      color: var(--turmeric-deep);
+      font-weight: 600;
+      border: 1px solid rgba(200, 148, 26, 0.2);
+    }
+
+    /* ——— FOOTER ——— */
+    footer {
+      background: var(--dark);
+      padding: 4rem 6rem;
+      text-align: center;
+      border-top: 1px solid rgba(200, 148, 26, 0.12);
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: rgba(251, 246, 232, 0.4);
+      margin-bottom: 2rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      font-size: 0.82rem;
+      color: rgba(251, 246, 232, 0.4);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    footer p {
+      font-size: 0.78rem;
+      color: rgba(251, 246, 232, 0.2);
+    }
+
+    /* ——— SCROLL ANIMATIONS ——— */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    .reveal-delay-5 {
+      transition-delay: 0.5s;
+    }
+
+    /* ——— PRODUCT DETAIL ——— */
+    #product-detail {
+      background: var(--cream);
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .detail-card {
+      border-radius: 24px;
+      overflow: hidden;
+      background: white;
+      border: 1px solid rgba(200, 148, 26, 0.12);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .detail-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(200, 148, 26, 0.14);
+    }
+
+    .detail-canvas-wrap {
+      position: relative;
+      height: 320px;
+      background: #0e0a02;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .detail-canvas-wrap canvas {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+    }
+
+    .detail-drag-hint {
+      position: absolute;
+      bottom: 0.8rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      color: rgba(200, 148, 26, 0.45);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      animation: pulse-opacity 2.5s ease-in-out infinite;
+    }
+
+    .detail-body {
+      padding: 1.75rem 2rem;
+    }
+
+    .detail-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+      background: rgba(200, 148, 26, 0.1);
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .detail-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--turmeric-deep);
+      margin-bottom: 0.65rem;
+    }
+
+    .detail-body p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .detail-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.1rem;
+    }
+
+    .detail-specs span {
+      font-size: 0.72rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      background: var(--gold-pale);
+      color: var(--turmeric-deep);
+      font-weight: 600;
+      border: 1px solid rgba(200, 148, 26, 0.18);
+    }
+
+    @media (max-width: 768px) {
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ——— LOADING OVERLAY ——— */
+    #loading {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: var(--dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      transition: opacity 0.6s;
+    }
+
+    #loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loading-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--gold-light);
+    }
+
+    .loading-bar {
+      width: 200px;
+      height: 2px;
+      background: rgba(200, 148, 26, 0.2);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .loading-progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--turmeric), var(--gold));
+      width: 0;
+      transition: width 0.1s;
+    }
+
+    .loading-text {
+      font-size: 0.75rem;
+      color: rgba(251, 246, 232, 0.3);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ——— RESPONSIVE ——— */
+    @media (max-width: 1024px) {
+      section {
+        padding: 5rem 3rem;
+      }
+
+      .hero-content {
+        padding: 0 3rem;
+      }
+
+      .ingredients-grid,
+      #viewer,
+      .compare-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefits-grid,
+      .pricing-grid,
+      .channel-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      nav {
+        padding: 1rem 2rem;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      #viewer {
+        min-height: auto;
+      }
+
+      .viewer-canvas-wrap {
+        min-height: 400px;
+      }
+
+      .viewer-info {
+        padding: 3rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+
+      .benefits-grid,
+      .pricing-grid,
+      .channel-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+
+      .price-card.featured {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LOADING -->
+  <div id="loading">
+    <div class="loading-logo">Thorakao</div>
+    <div class="loading-bar">
+      <div class="loading-progress" id="load-prog"></div>
+    </div>
+    <div class="loading-text">Đang tải trải nghiệm 3D...</div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Thora<span>kao</span></div>
+    <ul>
+      <li><a href="#ingredients">Thành Phần</a></li>
+      <li><a href="#benefits">Công Dụng</a></li>
+      <li><a href="#viewer">Sản Phẩm</a></li>
+      <li><a href="#pricing">Giá</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Mua
+      Ngay</button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="particles-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Ra mắt 2026 · Thiên nhiên Việt Nam</div>
+      <h1 class="hero-title">
+        Kem Nghệ<br><em>Mật Ong</em><br>Thorakao
+      </h1>
+      <p class="hero-desc">
+        Sự giao thoa hoàn hảo giữa tinh chất nghệ tươi kháng viêm và mật ong nguyên chất cấp ẩm —
+        một giải pháp chăm sóc da đa tác động cho làn da rạng rỡ, khỏe mạnh.
+      </p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">Khám
+          Phá Sản Phẩm</button>
+        <button class="btn-ghost"
+          onclick="document.getElementById('ingredients').scrollIntoView({behavior:'smooth'})">Xem Thành Phần</button>
+      </div>
+    </div>
+    <div class="hero-price-badge">
+      <span class="from">Chỉ từ</span>
+      <span class="price">179K</span>
+      <span class="unit">/ 20g</span>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-inner">
+      <span>Thiên Nhiên Thuần Khiết</span><span class="dot">✦</span>
+      <span>Nghệ Tươi Kháng Viêm</span><span class="dot">✦</span>
+      <span>Mật Ong Nguyên Chất</span><span class="dot">✦</span>
+      <span>Dưỡng Ẩm Sâu</span><span class="dot">✦</span>
+      <span>Không Hóa Chất</span><span class="dot">✦</span>
+      <span>An Toàn Mọi Loại Da</span><span class="dot">✦</span>
+      <span>Thorakao 1960</span><span class="dot">✦</span>
+      <span>Thiên Nhiên Thuần Khiết</span><span class="dot">✦</span>
+      <span>Nghệ Tươi Kháng Viêm</span><span class="dot">✦</span>
+      <span>Mật Ong Nguyên Chất</span><span class="dot">✦</span>
+      <span>Dưỡng Ẩm Sâu</span><span class="dot">✦</span>
+      <span>Không Hóa Chất</span><span class="dot">✦</span>
+      <span>An Toàn Mọi Loại Da</span><span class="dot">✦</span>
+      <span>Thorakao 1960</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- INGREDIENTS -->
+  <section id="ingredients">
+    <div class="ingredients-grid">
+      <div class="ingredient-visual">
+        <canvas id="ingredients-canvas"></canvas>
+      </div>
+      <div>
+        <div class="section-label reveal">Bí quyết từ thiên nhiên</div>
+        <h2 class="section-title reveal reveal-delay-1">Hai Nguyên Liệu,<br><em>Vô Vàn Tác Dụng</em></h2>
+        <p class="section-sub reveal reveal-delay-2">Công thức được chắt lọc từ trí tuệ thiên nhiên Việt Nam, kết hợp
+          hai nguyên liệu quý giá nhất cho làn da.</p>
+
+        <div class="ingredient-list" style="margin-top: 2rem;">
+          <div class="ingredient-card reveal reveal-delay-3">
+            <div class="ingredient-icon turmeric">🌿</div>
+            <div class="ingredient-text">
+              <h3>Tinh Chất Nghệ Tươi</h3>
+              <p>Curcumin trong nghệ có khả năng kháng viêm mạnh mẽ, làm mờ thâm sẹo và đánh tan mụn từ gốc rễ. Làm đều
+                màu da tự nhiên.</p>
+              <div class="ingredient-tags">
+                <span class="tag">Kháng Viêm</span>
+                <span class="tag">Làm Mờ Thâm</span>
+                <span class="tag">Trị Mụn</span>
+              </div>
+            </div>
+          </div>
+          <div class="ingredient-card reveal reveal-delay-4">
+            <div class="ingredient-icon honey">🍯</div>
+            <div class="ingredient-text">
+              <h3>Mật Ong Nguyên Chất</h3>
+              <p>Mật ong với tính kháng khuẩn tự nhiên cấp ẩm sâu, làm dịu vùng da nhạy cảm và ngăn ngừa lão hóa sớm
+                hiệu quả.</p>
+              <div class="ingredient-tags">
+                <span class="tag">Dưỡng Ẩm Sâu</span>
+                <span class="tag">Kháng Khuẩn</span>
+                <span class="tag">Chống Lão Hóa</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits">
+    <div class="benefits-intro">
+      <div class="section-label reveal">Tại sao chọn Thorakao</div>
+      <h2 class="section-title reveal reveal-delay-1">Năm Công Dụng<br><em>Một Hũ Kem</em></h2>
+      <p class="section-sub reveal reveal-delay-2">Không chỉ là kem dưỡng thông thường — đây là giải pháp chăm sóc da
+        toàn diện được nâng cấp vượt bậc từ công thức truyền thống.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card reveal">
+        <div class="benefit-number">01</div>
+        <div class="benefit-icon">⚡</div>
+        <h3>Kháng Viêm Tức Thì</h3>
+        <p>Curcumin từ nghệ thẩm thấu nhanh, ức chế vi khuẩn gây mụn và giảm viêm đỏ chỉ sau vài ngày sử dụng.</p>
+      </div>
+      <div class="benefit-card reveal reveal-delay-1">
+        <div class="benefit-number">02</div>
+        <div class="benefit-icon">💧</div>
+        <h3>Dưỡng Ẩm Sâu 24h</h3>
+        <p>Mật ong tạo màng dưỡng ẩm tự nhiên, giữ nước cho da suốt cả ngày mà không gây nhờn bết.</p>
+      </div>
+      <div class="benefit-card reveal reveal-delay-2">
+        <div class="benefit-number">03</div>
+        <div class="benefit-icon">✨</div>
+        <h3>Làm Mờ Thâm Sẹo</h3>
+        <p>Tác động ức chế sắc tố melanin, dần dần làm mờ vết thâm mụn và sẹo lâu năm trông thấy rõ rệt.</p>
+      </div>
+      <div class="benefit-card reveal reveal-delay-3">
+        <div class="benefit-number">04</div>
+        <div class="benefit-icon">🛡️</div>
+        <h3>Bảo Vệ Chống Lão Hóa</h3>
+        <p>Các chất chống oxy hóa tự nhiên từ mật ong và nghệ bảo vệ tế bào da khỏi tác hại của môi trường.</p>
+      </div>
+      <div class="benefit-card reveal reveal-delay-4">
+        <div class="benefit-number">05</div>
+        <div class="benefit-icon">🌸</div>
+        <h3>Phù Hợp Mọi Loại Da</h3>
+        <p>Thành phần 100% thiên nhiên, không hương liệu nhân tạo — an toàn cho cả da nhạy cảm và da dầu.</p>
+      </div>
+      <div class="benefit-card reveal reveal-delay-5">
+        <div class="benefit-number">06</div>
+        <div class="benefit-icon">🌿</div>
+        <h3>Không Hóa Chất Độc Hại</h3>
+        <p>Không paraben, không sulfate — cam kết lành tính tuyệt đối với công thức được kiểm nghiệm nghiêm ngặt.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT VIDEO -->
+  <section id="product-video" style="background: var(--cream); text-align: center; padding: 5rem 6rem;">
+    <div class="section-label reveal">Trải nghiệm thực tế</div>
+    <h2 class="section-title reveal reveal-delay-1">Video Cận Cảnh<br><em>Góc Nhìn 3D</em></h2>
+    <p class="section-sub reveal reveal-delay-2" style="margin: 0 auto 3.5rem; max-width: 600px;">Chiêm ngưỡng góc xoay toàn cảnh chân thực của hũ kem nghệ mật ong Thorakao phiên bản mới.</p>
+    
+    <div class="reveal reveal-delay-3" style="max-width: 900px; margin: 0 auto; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(200,148,26,0.18); border: 1px solid rgba(200,148,26,0.2); background: var(--dark); line-height: 0;">
+      <video width="100%" height="auto" controls autoplay loop muted playsinline style="display: block; width: 100%; height: auto; outline: none; border-radius: 23px;">
+        <source src="thorakao_turmeric_honey_orbit_10s.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ phát video.
+      </video>
+    </div>
+  </section>
+
+  <!-- 3D VIEWER — MAIN (full set) -->
+  <section id="viewer">
+    <div class="viewer-canvas-wrap">
+      <div class="drag-hint">&#8635; Kéo để xoay &middot; Cuộn để thu phóng</div>
+      <canvas id="model-canvas"></canvas>
+      <div class="viewer-controls">
+        <button class="ctrl-btn active" id="btn-rotate" title="Tự động xoay" onclick="toggleRotate()">&#8635;</button>
+        <button class="ctrl-btn" id="btn-reset" title="Đặt lại góc nhìn" onclick="resetCamera()">&#8857;</button>
+      </div>
+    </div>
+    <div class="viewer-info">
+      <div class="section-label reveal">Bộ sản phẩm đầy đủ</div>
+      <h2 class="section-title reveal reveal-delay-1">Hũ Kem &amp;<br><em>Hộp Đựng</em><br>Song Hành</h2>
+      <p class="section-sub reveal reveal-delay-2">Nhìn toàn bộ sản phẩm từ mọi góc độ — hũ kem trong suốt nhám mờ nằm
+        gọn trong hộp giấy vuông vức màu vàng tươi, tạo nên một tổng thể sang trọng và đồng bộ.</p>
+
+      <div class="specs-list reveal reveal-delay-3">
+        <div class="spec-row"><span class="spec-label">Dung tích</span><span class="spec-value">20g (tăng 2.85× so với
+            cũ)</span></div>
+        <div class="spec-row"><span class="spec-label">Hũ trong</span><span class="spec-value">Nhựa trong suốt nhám mờ,
+            nắp vàng satin</span></div>
+        <div class="spec-row"><span class="spec-label">Hộp ngoài</span><span class="spec-value">Giấy cứng vuông vức, màu
+            vàng tươi</span></div>
+        <div class="spec-row"><span class="spec-label">In ấn</span><span class="spec-value">Minh họa nghệ tươi &amp; tổ
+            ong sắc nét</span></div>
+        <div class="spec-row"><span class="spec-label">Kết cấu kem</span><span class="spec-value">Mỏng nhẹ, thẩm thấu
+            tức thì</span></div>
+        <div class="spec-row"><span class="spec-label">Xuất xứ</span><span class="spec-value">Sản xuất tại Việt
+            Nam</span></div>
+      </div>
+
+      <div class="model-switcher reveal reveal-delay-4">
+        <button class="model-btn active" onclick="switchModel('thorakao_new_2.glb', this, 'full')">Bộ đầy đủ</button>
+        <button class="model-btn" onclick="switchModel('thorakao_new.glb', this, 'box')">Hộp bao bì</button>
+        <button class="model-btn" onclick="switchModel('thorakao.glb', this, 'jar')">Hũ kem</button>
+      </div>
+
+      <div id="model-desc"
+        style="margin-top:1.5rem; padding:1rem 1.25rem; border-radius:12px; background:rgba(200,148,26,0.07); border:1px solid rgba(200,148,26,0.15); reveal reveal-delay-5">
+        <p id="model-desc-text" style="font-size:0.85rem; color:rgba(251,246,232,0.6); line-height:1.7;">Bộ sản phẩm
+          hoàn chỉnh — hũ kem và hộp đựng kết hợp hoàn hảo, thể hiện sự nâng cấp toàn diện về thiết kế của Thorakao thế
+          hệ mới.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT DETAIL — JAR + BOX side by side -->
+  <section id="product-detail">
+    <div class="section-label reveal">Chi tiết sản phẩm</div>
+    <h2 class="section-title reveal reveal-delay-1">Hai Phần,<br><em>Một Chỉnh Thể</em></h2>
+    <p class="section-sub reveal reveal-delay-2">Mỗi chi tiết thiết kế đều được tính toán kỹ lưỡng — từ hũ kem bên trong
+      đến hộp giấy bên ngoài.</p>
+
+    <div class="detail-grid">
+      <div class="detail-card reveal">
+        <div class="detail-canvas-wrap">
+          <canvas id="jar-canvas"></canvas>
+          <div class="detail-drag-hint">&#8635; Kéo để xoay</div>
+        </div>
+        <div class="detail-body">
+          <div class="detail-badge">Bên trong · Hũ kem</div>
+          <h3>Hũ Nhựa Trong Suốt Nhám Mờ</h3>
+          <p>Nhìn thấy màu kem nghệ vàng ấm áp qua thân trong suốt. Nắp vàng satin tinh tế, giữ nguyên form tròn dung dị
+            quen thuộc nhưng được nâng tầm hoàn toàn về mặt thẩm mỹ.</p>
+          <div class="detail-specs">
+            <span>20g · Form tròn</span><span>Nắp vàng satin</span><span>Trong suốt nhám mờ</span>
+          </div>
+        </div>
+      </div>
+      <div class="detail-card reveal reveal-delay-2">
+        <div class="detail-canvas-wrap">
+          <canvas id="box-canvas"></canvas>
+          <div class="detail-drag-hint">&#8635; Kéo để xoay</div>
+        </div>
+        <div class="detail-body">
+          <div class="detail-badge" style="background:rgba(212,130,26,0.12);color:var(--turmeric-deep);">Bên ngoài · Hộp
+            đựng</div>
+          <h3>Hộp Giấy Cứng Cao Cấp</h3>
+          <p>Hộp giấy vuông vức màu vàng tươi với minh họa củ nghệ và tổ ong in sắc nét. Logo Thorakao nổi bật, thành
+            phần và hướng dẫn in rõ ràng — chuyên nghiệp từ cái nhìn đầu tiên.</p>
+          <div class="detail-specs">
+            <span>Giấy cứng cao cấp</span><span>Vàng tươi đặc trưng</span><span>In offset 4 màu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section id="compare">
+    <div class="section-label reveal">Sự khác biệt rõ nét</div>
+    <h2 class="section-title reveal reveal-delay-1">Cũ & <em>Mới</em></h2>
+    <div class="compare-grid">
+      <div class="compare-card old reveal">
+        <div class="compare-header">
+          <h3>Kem Nghệ Thorakao</h3>
+          <span class="compare-badge">Cũ</span>
+        </div>
+        <div class="compare-body">
+          <div class="compare-row"><span class="key">Dung tích</span><span class="val">7g</span></div>
+          <div class="compare-row"><span class="key">Mật ong</span><span class="val cross">✗ Không có</span></div>
+          <div class="compare-row"><span class="key">Dưỡng ẩm</span><span class="val cross">✗ Cơ bản</span></div>
+          <div class="compare-row"><span class="key">Chống lão hóa</span><span class="val cross">✗ Không</span></div>
+          <div class="compare-row"><span class="key">Bao bì</span><span class="val">Tối giản truyền thống</span></div>
+          <div class="compare-row"><span class="key">Kết cấu</span><span class="val">Đặc, dễ bết dính</span></div>
+          <div class="compare-row"><span class="key">Giá</span><span class="val">~50.000đ</span></div>
+        </div>
+      </div>
+      <div class="compare-card new reveal reveal-delay-2">
+        <div class="compare-header">
+          <h3>Kem Nghệ Mật Ong Thorakao</h3>
+          <span class="compare-badge">Mới 2026</span>
+        </div>
+        <div class="compare-body">
+          <div class="compare-row"><span class="key">Dung tích</span><span class="val">20g (+186%)</span></div>
+          <div class="compare-row"><span class="key">Mật ong</span><span class="val check">✓ Nguyên chất 100%</span>
+          </div>
+          <div class="compare-row"><span class="key">Dưỡng ẩm</span><span class="val check">✓ Sâu 24 giờ</span></div>
+          <div class="compare-row"><span class="key">Chống lão hóa</span><span class="val check">✓ Chất oxy hóa tự
+              nhiên</span></div>
+          <div class="compare-row"><span class="key">Bao bì</span><span class="val">Trong suốt nhám mờ, sang
+              trọng</span></div>
+          <div class="compare-row"><span class="key">Kết cấu</span><span class="val">Mỏng nhẹ, thẩm thấu tức thì</span>
+          </div>
+          <div class="compare-row"><span class="key">Giá</span><span class="val">179.000đ</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="section-label reveal">Chọn gói phù hợp</div>
+    <h2 class="section-title reveal reveal-delay-1">Giá Trị<br><em>Xứng Đáng</em></h2>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="type">Lẻ</div>
+        <div class="original">229.000đ</div>
+        <div class="amount">179K</div>
+        <div class="per">/ 20g · 1 hũ</div>
+        <div class="saving">Tiết kiệm 50.000đ</div>
+        <ul class="price-features">
+          <li>1 hũ kem nghệ mật ong</li>
+          <li>Giao hàng toàn quốc</li>
+          <li>Hỗ trợ tư vấn da miễn phí</li>
+          <li>Đổi trả trong 7 ngày</li>
+        </ul>
+        <button class="price-cta outlined">Mua Lẻ</button>
+      </div>
+      <div class="price-card featured reveal reveal-delay-2">
+        <div class="badge">✦ Phổ Biến Nhất</div>
+        <div class="type">Combo Đôi</div>
+        <div class="original">358.000đ</div>
+        <div class="amount">319K</div>
+        <div class="per">/ combo 2 hũ</div>
+        <div class="saving">Tiết kiệm 39.000đ · Giảm 10,9%</div>
+        <ul class="price-features">
+          <li>2 hũ kem nghệ mật ong 20g</li>
+          <li>Miễn phí giao hàng nhanh</li>
+          <li>Tư vấn skincare 1-1</li>
+          <li>Ưu tiên đổi trả 14 ngày</li>
+          <li>Quà tặng kèm bất ngờ</li>
+        </ul>
+        <button class="price-cta filled">Mua Combo</button>
+      </div>
+      <div class="price-card reveal reveal-delay-3">
+        <div class="type">Drop Giới Hạn</div>
+        <div class="amount">319K</div>
+        <div class="per">/ combo + quà giới hạn</div>
+        <div class="saving">Chỉ 100 suất · FOMO Alert!</div>
+        <ul class="price-features">
+          <li>2 hũ kem nghệ mật ong 20g</li>
+          <li>+1 hũ phiên bản trong suốt độc quyền</li>
+          <li>Chỉ trong phiên Mega Sale</li>
+          <li>50 suất TikTokShop + 50 Shopee</li>
+          <li>Chứng nhận giới hạn kèm theo</li>
+        </ul>
+        <button class="price-cta outlined">Xem Lịch Sale</button>
+      </div>
+    </div>
+    <p class="limited-note reveal">Giá ưu đãi áp dụng trong thời gian ra mắt sản phẩm · Thanh toán COD, ví điện tử, thẻ
+      tín dụng</p>
+  </section>
+
+  <!-- DISTRIBUTION -->
+  <section id="distribution">
+    <div class="section-label reveal">Mua ở đâu?</div>
+    <h2 class="section-title reveal reveal-delay-1"><em>Ở Đâu Có Gia Đình Việt,</em><br>Ở Đó Có Thorakao</h2>
+    <p class="section-sub reveal reveal-delay-2">Hệ thống phân phối đa kênh tích hợp — từ cửa hàng truyền thống quen
+      thuộc đến thương mại điện tử hiện đại, sản phẩm luôn trong tầm tay bạn.</p>
+    <div class="channel-grid">
+      <div class="channel-card reveal">
+        <div class="channel-icon">🛒</div>
+        <h3>Thương Mại Điện Tử</h3>
+        <p>Gian hàng chính hãng với trải nghiệm mua sắm tối ưu, chương trình ưu đãi độc quyền và giao hàng nhanh toàn
+          quốc.</p>
+        <div class="channel-platforms">
+          <span class="platform-tag">Shopee Mall</span>
+          <span class="platform-tag">TikTok Shop</span>
+          <span class="platform-tag">Lazada</span>
+        </div>
+      </div>
+      <div class="channel-card reveal reveal-delay-1">
+        <div class="channel-icon">💊</div>
+        <h3>Chuỗi Dược Mỹ Phẩm</h3>
+        <p>Hiện diện tại các chuỗi bán lẻ cao cấp, nơi sản phẩm được định vị ngang hàng với các thương hiệu quốc tế.</p>
+        <div class="channel-platforms">
+          <span class="platform-tag">Hasaki</span>
+          <span class="platform-tag">Guardian</span>
+          <span class="platform-tag">Pharmacity</span>
+          <span class="platform-tag">Long Châu</span>
+        </div>
+      </div>
+      <div class="channel-card reveal reveal-delay-2">
+        <div class="channel-icon">🏪</div>
+        <h3>Kênh Truyền Thống</h3>
+        <p>Tiếp nối di sản, sản phẩm vẫn có mặt tại hệ thống tạp hóa và chợ truyền thống được nâng cấp hình ảnh hiện
+          đại.</p>
+        <div class="channel-platforms">
+          <span class="platform-tag">Tạp hóa</span>
+          <span class="platform-tag">Siêu thị</span>
+          <span class="platform-tag">Chợ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Thorakao</div>
+    <div class="footer-tagline">Thiên nhiên thuần khiết từ 1960 · Kem Nghệ Mật Ong</div>
+    <div class="footer-links">
+      <a href="#">Về Chúng Tôi</a>
+      <a href="#">Thành Phần</a>
+      <a href="#">Chính Sách Đổi Trả</a>
+      <a href="#">Liên Hệ</a>
+      <a href="#">Hotline</a>
+    </div>
+    <p>© 2025 Thorakao. Mỹ phẩm Việt Nam · Sản xuất tại Việt Nam</p>
+  </footer>
+
+  <!-- THREE.JS SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script>
+
+    /* ——— LOADING ——— */
+    const loadProg = document.getElementById('load-prog');
+    const loadingEl = document.getElementById('loading');
+    let loadVal = 0;
+    const fakeLoad = setInterval(() => {
+      loadVal = Math.min(loadVal + Math.random() * 8, 90);
+      loadProg.style.width = loadVal + '%';
+    }, 80);
+
+    function finishLoading() {
+      clearInterval(fakeLoad);
+      loadProg.style.width = '100%';
+      setTimeout(() => { loadingEl.classList.add('hidden'); }, 400);
+    }
+
+    /* ——— HERO CANVAS — floating particles ——— */
+    (function () {
+      const canvas = document.getElementById('hero-canvas');
+      const ctx = canvas.getContext('2d');
+      let W, H, particles = [];
+
+      function resize() {
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      for (let i = 0; i < 60; i++) {
+        particles.push({
+          x: Math.random() * W, y: Math.random() * H,
+          r: Math.random() * 3 + 1,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          opacity: Math.random() * 0.4 + 0.1,
+          color: Math.random() > 0.5 ? '#C8941A' : '#E8A020'
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        particles.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+          if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.globalAlpha = p.opacity;
+          ctx.fill();
+        });
+        ctx.globalAlpha = 1;
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    /* ——— INGREDIENTS CANVAS — orbiting golden particles ——— */
+    (function () {
+      const canvas = document.getElementById('ingredients-canvas');
+      const ctx = canvas.getContext('2d');
+      let t = 0;
+
+      function resize() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      function draw() {
+        const W = canvas.width, H = canvas.height;
+        const cx = W / 2, cy = H / 2;
+        ctx.clearRect(0, 0, W, H);
+
+        // Background glow
+        const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.min(W, H) * 0.45);
+        grd.addColorStop(0, 'rgba(200,148,26,0.08)');
+        grd.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 0, W, H);
+
+        // Orbits
+        [[80, 0.5], [140, -0.3], [200, 0.7]].forEach(([r, speed], i) => {
+          ctx.beginPath();
+          ctx.arc(cx, cy, r, 0, Math.PI * 2);
+          ctx.strokeStyle = 'rgba(200,148,26,0.08)';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+
+          const dots = i === 0 ? 3 : i === 1 ? 5 : 8;
+          for (let d = 0; d < dots; d++) {
+            const angle = (t * speed) + (d / dots) * Math.PI * 2;
+            const px = cx + Math.cos(angle) * r;
+            const py = cy + Math.sin(angle) * r;
+            const dotR = i === 0 ? 5 : i === 1 ? 3.5 : 2.5;
+            ctx.beginPath();
+            ctx.arc(px, py, dotR, 0, Math.PI * 2);
+            ctx.fillStyle = i === 0 ? '#C8941A' : i === 1 ? '#E8A020' : 'rgba(200,148,26,0.5)';
+            ctx.globalAlpha = 0.8;
+            ctx.fill();
+            ctx.globalAlpha = 1;
+          }
+        });
+
+        // Center element — honeycomb shape suggestion
+        ctx.beginPath();
+        ctx.arc(cx, cy, 38, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(200,148,26,0.12)';
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(cx, cy, 28, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(200,148,26,0.2)';
+        ctx.fill();
+
+        // Center text
+        ctx.font = '900 28px serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = '#C8941A';
+        ctx.globalAlpha = 0.9;
+        ctx.fillText('🍯', cx, cy);
+        ctx.globalAlpha = 1;
+
+        t += 0.008;
+        requestAnimationFrame(draw);
+      }
+      draw();
+    })();
+
+    /* ——— THREE.JS GLB VIEWER ——— */
+    let scene3, camera3, renderer3, model3, isRotating = true, clock3, controls3;
+
+    function initThreeViewer() {
+      const canvas = document.getElementById('model-canvas');
+      const wrap = canvas.parentElement;
+      const W = wrap.offsetWidth, H = wrap.offsetHeight;
+
+      scene3 = new THREE.Scene();
+      camera3 = new THREE.PerspectiveCamera(45, W / H, 0.1, 100);
+      camera3.position.set(0, 0.5, 3);
+
+      renderer3 = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+      renderer3.setPixelRatio(window.devicePixelRatio);
+      renderer3.setSize(W, H);
+      renderer3.outputEncoding = THREE.sRGBEncoding;
+      renderer3.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer3.toneMappingExposure = 1.4;
+
+      // Lighting
+      const ambientLight = new THREE.AmbientLight(0xffeedd, 0.8);
+      scene3.add(ambientLight);
+
+      const keyLight = new THREE.DirectionalLight(0xfff5e0, 2.5);
+      keyLight.position.set(2, 4, 3);
+      scene3.add(keyLight);
+
+      const fillLight = new THREE.DirectionalLight(0xC8941A, 0.8);
+      fillLight.position.set(-3, 1, -1);
+      scene3.add(fillLight);
+
+      const rimLight = new THREE.DirectionalLight(0xE8A020, 1.2);
+      rimLight.position.set(0, -2, -3);
+      scene3.add(rimLight);
+
+      // Environment map — fake IBL using hemisphere
+      const hemi = new THREE.HemisphereLight(0xfdf3d0, 0x1a1208, 0.6);
+      scene3.add(hemi);
+
+      clock3 = new THREE.Clock();
+
+      // OrbitControls
+      controls3 = new THREE.OrbitControls(camera3, renderer3.domElement);
+      controls3.enableDamping = true;
+      controls3.dampingFactor = 0.05;
+      controls3.enablePan = false; // Disable panning to keep object centered
+      controls3.minDistance = 1.5;
+      controls3.maxDistance = 6;
+      controls3.autoRotate = isRotating;
+      controls3.autoRotateSpeed = 2.0;
+
+      window.addEventListener('resize', () => {
+        const W = wrap.offsetWidth, H = wrap.offsetHeight;
+        camera3.aspect = W / H;
+        camera3.updateProjectionMatrix();
+        renderer3.setSize(W, H);
+      });
+
+      loadGLB('thorakao_new_2.glb');
+      animate3();
+    }
+
+    function loadGLB(filename) {
+      if (model3) { scene3.remove(model3); model3 = null; }
+
+      const loader = new THREE.GLTFLoader();
+      const url = filename + (filename.includes('?') ? '&' : '?') + 'v=' + Date.now();
+      loader.load(url,
+        function (gltf) {
+          model3 = gltf.scene;
+
+          // Auto center and scale the model
+          const box = new THREE.Box3().setFromObject(model3);
+          const center = box.getCenter(new THREE.Vector3());
+          const size = box.getSize(new THREE.Vector3());
+          const maxDim = Math.max(size.x, size.y, size.z);
+          const scale = 2 / maxDim;
+          model3.scale.setScalar(scale);
+          model3.position.sub(center.multiplyScalar(scale));
+
+          scene3.add(model3);
+          finishLoading();
+        },
+        xhr => {
+          if (xhr.total > 0) {
+            const pct = (xhr.loaded / xhr.total) * 100;
+            loadProg.style.width = Math.max(50, pct) + '%';
+          }
+        },
+        err => {
+          console.warn('GLB load error:', err);
+          createFallbackModel();
+          finishLoading();
+        }
+      );
+    }
+
+
+    function createFallbackModel() {
+      const group = new THREE.Group();
+
+      // Jar body
+      const jar = new THREE.CylinderGeometry(0.6, 0.55, 0.55, 64, 1, false);
+      const jarMat = new THREE.MeshPhysicalMaterial({ color: 0xfafafa, metalness: 0, roughness: 0.1, transmission: 0.7, thickness: 0.5, transparent: true, opacity: 0.85 });
+      group.add(new THREE.Mesh(jar, jarMat));
+
+      // Lid
+      const lid = new THREE.CylinderGeometry(0.63, 0.63, 0.12, 64);
+      const lidMat = new THREE.MeshStandardMaterial({ color: 0xC8941A, metalness: 0.6, roughness: 0.2 });
+      const lidMesh = new THREE.Mesh(lid, lidMat);
+      lidMesh.position.y = 0.33;
+      group.add(lidMesh);
+
+      // Logo disk
+      const disk = new THREE.CylinderGeometry(0.3, 0.3, 0.02, 32);
+      const diskMat = new THREE.MeshStandardMaterial({ color: 0xF0C842, metalness: 0.8, roughness: 0.1 });
+      const diskMesh = new THREE.Mesh(disk, diskMat);
+      diskMesh.position.y = 0.28;
+      group.add(diskMesh);
+
+      // Bottom ring
+      const ring = new THREE.TorusGeometry(0.56, 0.03, 8, 64);
+      const ringMat = new THREE.MeshStandardMaterial({ color: 0xC8941A, metalness: 0.7, roughness: 0.15 });
+      const ringMesh = new THREE.Mesh(ring, ringMat);
+      ringMesh.position.y = -0.27;
+      ringMesh.rotation.x = Math.PI / 2;
+      group.add(ringMesh);
+
+      model3 = group;
+      scene3.add(model3);
+    }
+
+    function animate3() {
+      requestAnimationFrame(animate3);
+      if (controls3) {
+        controls3.autoRotate = isRotating;
+        controls3.update();
+      }
+      if (model3) {
+        // Gentle float
+        model3.position.y = Math.sin(clock3.getElapsedTime() * 0.7) * 0.04;
+      }
+      renderer3.render(scene3, camera3);
+    }
+
+    function toggleRotate() {
+      isRotating = !isRotating;
+      document.getElementById('btn-rotate').classList.toggle('active', isRotating);
+    }
+
+    function resetCamera() {
+      camera3.position.set(0, 0.5, 3);
+      if (controls3) {
+        controls3.target.set(0, 0, 0);
+        controls3.update();
+      }
+      if (model3) { model3.rotation.set(0, 0, 0); }
+    }
+
+    function switchModel(filename, btn, type) {
+      document.querySelectorAll('.model-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const descs = {
+        full: 'Bộ sản phẩm hoàn chỉnh — hũ kem và hộp đựng kết hợp hoàn hảo, thể hiện sự nâng cấp toàn diện về thiết kế của Thorakao thế hệ mới.',
+        box: 'Hộp giấy bao bì bên ngoài — vuông vức, màu vàng tươi đặc trưng với minh họa nghệ tươi và tổ ong in sắc nét. Vỏ hộp bảo vệ và nâng tầm giá trị sản phẩm.',
+        jar: 'Hũ kem bên trong — thân trong suốt nhám mờ để lộ màu vàng ấm áp của kem nghệ, nắp vàng satin tinh tế. Dung tích 20g, gấp 2.85 lần phiên bản cũ.'
+      };
+      const el = document.getElementById('model-desc-text');
+      if (el && descs[type]) el.textContent = descs[type];
+      loadGLB(filename);
+    }
+
+    /* ——— SCROLL REVEAL ——— */
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    /* ——— MINI VIEWERS (jar + box) ——— */
+    function initMiniViewer(canvasId, glbFile, fallbackFn) {
+      const canvas = document.getElementById(canvasId);
+      if (!canvas) return;
+      const wrap = canvas.parentElement;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, wrap.offsetWidth / wrap.offsetHeight, 0.1, 100);
+      camera.position.set(0, 0.5, 3);
+
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(wrap.offsetWidth, wrap.offsetHeight);
+      renderer.outputEncoding = THREE.sRGBEncoding;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.4;
+
+      scene.add(new THREE.AmbientLight(0xffeedd, 0.9));
+      const key = new THREE.DirectionalLight(0xfff5e0, 2.5); key.position.set(2, 4, 3); scene.add(key);
+      const fill = new THREE.DirectionalLight(0xC8941A, 0.8); fill.position.set(-3, 1, -1); scene.add(fill);
+      const rim = new THREE.DirectionalLight(0xE8A020, 1.2); rim.position.set(0, -2, -3); scene.add(rim);
+      scene.add(new THREE.HemisphereLight(0xfdf3d0, 0x1a1208, 0.5));
+
+      let miniModel = null;
+      const clk = new THREE.Clock();
+
+      // OrbitControls for mini viewer
+      const controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.enablePan = false;
+      controls.enableZoom = false; // Disable zoom on mini-viewers so scrolling page is easy
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 2.5;
+
+      window.addEventListener('resize', () => {
+        const W = wrap.offsetWidth, H = wrap.offsetHeight;
+        camera.aspect = W / H; camera.updateProjectionMatrix(); renderer.setSize(W, H);
+      });
+
+      function loadMiniGLB() {
+        const loader = new THREE.GLTFLoader();
+        const url = glbFile + (glbFile.includes('?') ? '&' : '?') + 'v=' + Date.now();
+        loader.load(url,
+          gltf => {
+            miniModel = gltf.scene;
+            const box2 = new THREE.Box3().setFromObject(miniModel);
+            const c2 = box2.getCenter(new THREE.Vector3());
+            const s2 = box2.getSize(new THREE.Vector3());
+            const sc = 2 / Math.max(s2.x, s2.y, s2.z);
+            miniModel.scale.setScalar(sc);
+            miniModel.position.sub(c2.multiplyScalar(sc));
+            scene.add(miniModel);
+          },
+          null,
+          err => {
+            console.warn('Mini GLB load error:', err);
+            miniModel = fallbackFn();
+            scene.add(miniModel);
+          }
+        );
+      }
+      loadMiniGLB();
+
+      function animMini() {
+        requestAnimationFrame(animMini);
+        if (controls) controls.update();
+        if (miniModel) miniModel.position.y = Math.sin(clk.getElapsedTime() * 0.8) * 0.035;
+        renderer.render(scene, camera);
+      }
+      animMini();
+    }
+
+    function makeFallbackJar() {
+      const g = new THREE.Group();
+      const jar = new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.55, 0.55, 64), new THREE.MeshPhysicalMaterial({ color: 0xfafafa, transmission: 0.7, thickness: 0.5, transparent: true, opacity: 0.85, roughness: 0.1 }));
+      g.add(jar);
+      const lid = new THREE.Mesh(new THREE.CylinderGeometry(0.63, 0.63, 0.12, 64), new THREE.MeshStandardMaterial({ color: 0xC8941A, metalness: 0.6, roughness: 0.2 }));
+      lid.position.y = 0.33; g.add(lid);
+      const disk = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.02, 32), new THREE.MeshStandardMaterial({ color: 0xF0C842, metalness: 0.8, roughness: 0.1 }));
+      disk.position.y = 0.28; g.add(disk);
+      return g;
+    }
+
+    function makeFallbackBox() {
+      const g = new THREE.Group();
+      const body = new THREE.Mesh(new THREE.BoxGeometry(1.1, 1.3, 1.1), new THREE.MeshStandardMaterial({ color: 0xE8A020, roughness: 0.5, metalness: 0.1 }));
+      g.add(body);
+      const lid = new THREE.Mesh(new THREE.BoxGeometry(1.15, 0.15, 1.15), new THREE.MeshStandardMaterial({ color: 0xC8941A, roughness: 0.3, metalness: 0.2 }));
+      lid.position.y = 0.72; g.add(lid);
+      const stripe = new THREE.Mesh(new THREE.BoxGeometry(1.12, 0.06, 1.12), new THREE.MeshStandardMaterial({ color: 0xF0C842, roughness: 0.2, metalness: 0.4 }));
+      stripe.position.y = 0.2; g.add(stripe);
+      return g;
+    }
+
+    /* ——— INIT ——— */
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        initThreeViewer();
+        // Mini viewers load slightly later so main viewer gets priority
+        setTimeout(() => {
+          initMiniViewer('jar-canvas', 'thorakao.glb', makeFallbackJar);
+          initMiniViewer('box-canvas', 'thorakao_new.glb', makeFallbackBox);
+        }, 600);
+      }, 100);
+      setTimeout(finishLoading, 4000);
+    });
+  </script>
+</body>
+
+</html>
