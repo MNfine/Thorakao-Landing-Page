@@ -30,9 +30,6 @@
       --text-muted: #7A6A4A;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -1462,7 +1459,7 @@
       <li><a href="#viewer">Sản Phẩm</a></li>
       <li><a href="#pricing">Giá</a></li>
     </ul>
-    <button class="nav-cta" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Mua
+     <button class="nav-cta" onclick="smoothScrollTo('#pricing', 1200)">Mua
       Ngay</button>
   </nav>
 
@@ -1480,10 +1477,10 @@
         một giải pháp chăm sóc da đa tác động cho làn da rạng rỡ, khỏe mạnh.
       </p>
       <div class="hero-btns">
-        <button class="btn-primary" onclick="document.getElementById('viewer').scrollIntoView({behavior:'smooth'})">Khám
+        <button class="btn-primary" onclick="smoothScrollTo('#viewer', 1200)">Khám
           Phá Sản Phẩm</button>
         <button class="btn-ghost"
-          onclick="document.getElementById('ingredients').scrollIntoView({behavior:'smooth'})">Xem Thành Phần</button>
+          onclick="smoothScrollTo('#ingredients', 1200)">Xem Thành Phần</button>
       </div>
     </div>
     <div class="hero-price-badge">
@@ -1881,6 +1878,50 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
+    /* ——— CUSTOM SMOOTH SCROLL ——— */
+    function smoothScrollTo(targetSelector, duration = 1200) {
+      const target = document.querySelector(targetSelector);
+      if (!target) return;
+      const nav = document.querySelector('nav');
+      const offset = nav ? nav.offsetHeight : 80;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      let startTime = null;
+
+      function easeInOutCubic(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t * t + b;
+        t -= 2;
+        return c / 2 * (t * t * t + 2) + b;
+      }
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        } else {
+          window.scrollTo(0, targetPosition);
+        }
+      }
+      requestAnimationFrame(animation);
+    }
+
+    // Intercept anchor clicks
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          e.preventDefault();
+          smoothScrollTo(targetId, 1200);
+        });
+      });
+    });
+
 
     /* ——— LOADING ——— */
     const loadProg = document.getElementById('load-prog');
