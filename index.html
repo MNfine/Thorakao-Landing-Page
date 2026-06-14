@@ -63,10 +63,19 @@
       font-weight: 700;
       color: var(--turmeric-deep);
       letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
     }
 
     .nav-logo span {
       color: var(--gold);
+    }
+
+    .nav-logo img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
     }
 
     nav ul {
@@ -189,6 +198,7 @@
       cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 8px 30px rgba(200, 148, 26, 0.4);
+      white-space: nowrap;
     }
 
     .btn-primary:hover {
@@ -205,6 +215,7 @@
       font-weight: 500;
       border: 1.5px solid var(--gold);
       cursor: pointer;
+      white-space: nowrap;
       transition: all 0.2s;
     }
 
@@ -1341,7 +1352,6 @@
     }
 
     @media (max-width: 640px) {
-
       .benefits-grid,
       .pricing-grid,
       .channel-grid {
@@ -1354,6 +1364,46 @@
 
       .price-card.featured {
         transform: scale(1);
+      }
+
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-logo img {
+        height: 30px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      section {
+        padding: 4rem 1.5rem !important;
+      }
+
+      .hero-content {
+        padding: 0 1.5rem;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0.75rem;
+      }
+
+      .hero-btns button {
+        width: 100%;
+      }
+
+      .hero-price-badge {
+        right: 1.5rem;
+        bottom: 2rem;
+        width: 90px;
+        height: 90px;
+      }
+
+      .hero-price-badge .price {
+        font-size: 1.2rem;
       }
     }
   </style>
@@ -1372,7 +1422,10 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">Thora<span>kao</span></div>
+    <div class="nav-logo">
+      <img src="Thorakao_logo.png" alt="Thorakao Logo">
+      Thora<span>kao</span>
+    </div>
     <ul>
       <li><a href="#ingredients">Thành Phần</a></li>
       <li><a href="#benefits">Công Dụng</a></li>
@@ -1444,7 +1497,7 @@
 
         <div class="ingredient-list" style="margin-top: 2rem;">
           <div class="ingredient-card reveal reveal-delay-3">
-            <div class="ingredient-icon turmeric">🌿</div>
+            <div class="ingredient-icon turmeric"><i data-lucide="leaf" style="color: var(--turmeric); width: 28px; height: 28px;"></i></div>
             <div class="ingredient-text">
               <h3>Tinh Chất Nghệ Tươi</h3>
               <p>Curcumin trong nghệ có khả năng kháng viêm mạnh mẽ, làm mờ thâm sẹo và đánh tan mụn từ gốc rễ. Làm đều
@@ -1457,7 +1510,7 @@
             </div>
           </div>
           <div class="ingredient-card reveal reveal-delay-4">
-            <div class="ingredient-icon honey">🍯</div>
+            <div class="ingredient-icon honey"><i data-lucide="droplet" style="color: var(--honey); width: 28px; height: 28px;"></i></div>
             <div class="ingredient-text">
               <h3>Mật Ong Nguyên Chất</h3>
               <p>Mật ong với tính kháng khuẩn tự nhiên cấp ẩm sâu, làm dịu vùng da nhạy cảm và ngăn ngừa lão hóa sớm
@@ -1485,37 +1538,37 @@
     <div class="benefits-grid">
       <div class="benefit-card reveal">
         <div class="benefit-number">01</div>
-        <div class="benefit-icon">⚡</div>
+        <div class="benefit-icon"><i data-lucide="zap" style="color: var(--gold); width: 32px; height: 32px; display: inline-block;"></i></div>
         <h3>Kháng Viêm Tức Thì</h3>
         <p>Curcumin từ nghệ thẩm thấu nhanh, ức chế vi khuẩn gây mụn và giảm viêm đỏ chỉ sau vài ngày sử dụng.</p>
       </div>
       <div class="benefit-card reveal reveal-delay-1">
         <div class="benefit-number">02</div>
-        <div class="benefit-icon">💧</div>
+        <div class="benefit-icon"><i data-lucide="droplets" style="color: var(--gold); width: 32px; height: 32px; display: inline-block;"></i></div>
         <h3>Dưỡng Ẩm Sâu 24h</h3>
         <p>Mật ong tạo màng dưỡng ẩm tự nhiên, giữ nước cho da suốt cả ngày mà không gây nhờn bết.</p>
       </div>
       <div class="benefit-card reveal reveal-delay-2">
         <div class="benefit-number">03</div>
-        <div class="benefit-icon">✨</div>
+        <div class="benefit-icon"><i data-lucide="sparkles" style="color: var(--gold); width: 32px; height: 32px; display: inline-block;"></i></div>
         <h3>Làm Mờ Thâm Sẹo</h3>
         <p>Tác động ức chế sắc tố melanin, dần dần làm mờ vết thâm mụn và sẹo lâu năm trông thấy rõ rệt.</p>
       </div>
       <div class="benefit-card reveal reveal-delay-3">
         <div class="benefit-number">04</div>
-        <div class="benefit-icon">🛡️</div>
+        <div class="benefit-icon"><i data-lucide="shield-check" style="color: var(--gold); width: 32px; height: 32px; display: inline-block;"></i></div>
         <h3>Bảo Vệ Chống Lão Hóa</h3>
         <p>Các chất chống oxy hóa tự nhiên từ mật ong và nghệ bảo vệ tế bào da khỏi tác hại của môi trường.</p>
       </div>
       <div class="benefit-card reveal reveal-delay-4">
         <div class="benefit-number">05</div>
-        <div class="benefit-icon">🌸</div>
+        <div class="benefit-icon"><i data-lucide="flower-2" style="color: var(--gold); width: 32px; height: 32px; display: inline-block;"></i></div>
         <h3>Phù Hợp Mọi Loại Da</h3>
         <p>Thành phần 100% thiên nhiên, không hương liệu nhân tạo — an toàn cho cả da nhạy cảm và da dầu.</p>
       </div>
       <div class="benefit-card reveal reveal-delay-5">
         <div class="benefit-number">06</div>
-        <div class="benefit-icon">🌿</div>
+        <div class="benefit-icon"><i data-lucide="leaf" style="color: var(--gold); width: 32px; height: 32px; display: inline-block;"></i></div>
         <h3>Không Hóa Chất Độc Hại</h3>
         <p>Không paraben, không sulfate — cam kết lành tính tuyệt đối với công thức được kiểm nghiệm nghiêm ngặt.</p>
       </div>
@@ -1728,7 +1781,7 @@
       thuộc đến thương mại điện tử hiện đại, sản phẩm luôn trong tầm tay bạn.</p>
     <div class="channel-grid">
       <div class="channel-card reveal">
-        <div class="channel-icon">🛒</div>
+        <div class="channel-icon"><i data-lucide="shopping-cart" style="color: var(--gold); width: 36px; height: 36px; display: inline-block;"></i></div>
         <h3>Thương Mại Điện Tử</h3>
         <p>Gian hàng chính hãng với trải nghiệm mua sắm tối ưu, chương trình ưu đãi độc quyền và giao hàng nhanh toàn
           quốc.</p>
@@ -1739,7 +1792,7 @@
         </div>
       </div>
       <div class="channel-card reveal reveal-delay-1">
-        <div class="channel-icon">💊</div>
+        <div class="channel-icon"><i data-lucide="pill" style="color: var(--gold); width: 36px; height: 36px; display: inline-block;"></i></div>
         <h3>Chuỗi Dược Mỹ Phẩm</h3>
         <p>Hiện diện tại các chuỗi bán lẻ cao cấp, nơi sản phẩm được định vị ngang hàng với các thương hiệu quốc tế.</p>
         <div class="channel-platforms">
@@ -1750,7 +1803,7 @@
         </div>
       </div>
       <div class="channel-card reveal reveal-delay-2">
-        <div class="channel-icon">🏪</div>
+        <div class="channel-icon"><i data-lucide="store" style="color: var(--gold); width: 36px; height: 36px; display: inline-block;"></i></div>
         <h3>Kênh Truyền Thống</h3>
         <p>Tiếp nối di sản, sản phẩm vẫn có mặt tại hệ thống tạp hóa và chợ truyền thống được nâng cấp hình ảnh hiện
           đại.</p>
@@ -1781,6 +1834,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script>
 
     /* ——— LOADING ——— */
@@ -1899,12 +1953,12 @@
         ctx.fill();
 
         // Center text
-        ctx.font = '900 28px serif';
+        ctx.font = '24px sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = '#C8941A';
         ctx.globalAlpha = 0.9;
-        ctx.fillText('🍯', cx, cy);
+        ctx.fillText('✦', cx, cy);
         ctx.globalAlpha = 1;
 
         t += 0.008;
@@ -1930,26 +1984,26 @@
       renderer3.setSize(W, H);
       renderer3.outputEncoding = THREE.sRGBEncoding;
       renderer3.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer3.toneMappingExposure = 1.4;
+      renderer3.toneMappingExposure = 1.0;
 
       // Lighting
-      const ambientLight = new THREE.AmbientLight(0xffeedd, 0.8);
+      const ambientLight = new THREE.AmbientLight(0xffeedd, 0.5);
       scene3.add(ambientLight);
 
-      const keyLight = new THREE.DirectionalLight(0xfff5e0, 2.5);
+      const keyLight = new THREE.DirectionalLight(0xfff5e0, 1.2);
       keyLight.position.set(2, 4, 3);
       scene3.add(keyLight);
 
-      const fillLight = new THREE.DirectionalLight(0xC8941A, 0.8);
+      const fillLight = new THREE.DirectionalLight(0xC8941A, 0.4);
       fillLight.position.set(-3, 1, -1);
       scene3.add(fillLight);
 
-      const rimLight = new THREE.DirectionalLight(0xE8A020, 1.2);
+      const rimLight = new THREE.DirectionalLight(0xE8A020, 0.6);
       rimLight.position.set(0, -2, -3);
       scene3.add(rimLight);
 
       // Environment map — fake IBL using hemisphere
-      const hemi = new THREE.HemisphereLight(0xfdf3d0, 0x1a1208, 0.6);
+      const hemi = new THREE.HemisphereLight(0xfdf3d0, 0x1a1208, 0.4);
       scene3.add(hemi);
 
       clock3 = new THREE.Clock();
@@ -1989,7 +2043,10 @@
           const center = box.getCenter(new THREE.Vector3());
           const size = box.getSize(new THREE.Vector3());
           const maxDim = Math.max(size.x, size.y, size.z);
-          const scale = 2 / maxDim;
+          const isBox = filename.includes('thorakao_new.glb');
+          const isFullSet = filename.includes('thorakao_new_2.glb');
+          const scaleFactor = isBox ? 1.35 : (isFullSet ? 1.65 : 2.0);
+          const scale = scaleFactor / maxDim;
           model3.scale.setScalar(scale);
           model3.position.sub(center.multiplyScalar(scale));
 
@@ -2107,13 +2164,13 @@
       renderer.setSize(wrap.offsetWidth, wrap.offsetHeight);
       renderer.outputEncoding = THREE.sRGBEncoding;
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.4;
+      renderer.toneMappingExposure = 1.0;
 
-      scene.add(new THREE.AmbientLight(0xffeedd, 0.9));
-      const key = new THREE.DirectionalLight(0xfff5e0, 2.5); key.position.set(2, 4, 3); scene.add(key);
-      const fill = new THREE.DirectionalLight(0xC8941A, 0.8); fill.position.set(-3, 1, -1); scene.add(fill);
-      const rim = new THREE.DirectionalLight(0xE8A020, 1.2); rim.position.set(0, -2, -3); scene.add(rim);
-      scene.add(new THREE.HemisphereLight(0xfdf3d0, 0x1a1208, 0.5));
+      scene.add(new THREE.AmbientLight(0xffeedd, 0.5));
+      const key = new THREE.DirectionalLight(0xfff5e0, 1.2); key.position.set(2, 4, 3); scene.add(key);
+      const fill = new THREE.DirectionalLight(0xC8941A, 0.4); fill.position.set(-3, 1, -1); scene.add(fill);
+      const rim = new THREE.DirectionalLight(0xE8A020, 0.6); rim.position.set(0, -2, -3); scene.add(rim);
+      scene.add(new THREE.HemisphereLight(0xfdf3d0, 0x1a1208, 0.4));
 
       let miniModel = null;
       const clk = new THREE.Clock();
@@ -2141,7 +2198,8 @@
             const box2 = new THREE.Box3().setFromObject(miniModel);
             const c2 = box2.getCenter(new THREE.Vector3());
             const s2 = box2.getSize(new THREE.Vector3());
-            const sc = 2 / Math.max(s2.x, s2.y, s2.z);
+            const isBox = glbFile.includes('thorakao_new.glb');
+            const sc = (isBox ? 1.35 : 2.0) / Math.max(s2.x, s2.y, s2.z);
             miniModel.scale.setScalar(sc);
             miniModel.position.sub(c2.multiplyScalar(sc));
             scene.add(miniModel);
@@ -2189,6 +2247,11 @@
 
     /* ——— INIT ——— */
     window.addEventListener('DOMContentLoaded', () => {
+      // Initialize Lucide icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+
       setTimeout(() => {
         initThreeViewer();
         // Mini viewers load slightly later so main viewer gets priority
