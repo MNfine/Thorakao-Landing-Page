@@ -424,7 +424,7 @@
       position: absolute;
       inset: 0;
       border-radius: 24px;
-      background: linear-gradient(160deg, rgba(200,148,26,0.08) 0%, transparent 60%);
+      background: linear-gradient(160deg, rgba(200, 148, 26, 0.08) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -758,15 +758,17 @@
 
     .compare-grid {
       display: grid;
-      grid-template-columns: 1fr 1.3fr;
+      grid-template-columns: 1fr 1fr;
       gap: 3rem;
       margin-top: 3.5rem;
-      align-items: start;
+      align-items: stretch;
     }
 
     .compare-card {
       border-radius: 20px;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .compare-header {
@@ -821,6 +823,7 @@
       border: 1px solid rgba(0, 0, 0, 0.06);
       border-top: none;
       border-radius: 0 0 20px 20px;
+      flex: 1;
     }
 
     .compare-row {
@@ -1443,7 +1446,8 @@
   <!-- NAV -->
   <nav>
     <div class="nav-logo">
-      <img src="logo-raw-white.png" alt="Thorakao Logo"><span class="nav-logo-text">Thora<span class="kao">kao</span></span>
+      <img src="logo-raw-white.png" alt="Thorakao Logo"><span class="nav-logo-text">Thora<span
+          class="kao">kao</span></span>
     </div>
     <ul>
       <li><a href="#ingredients">Thành Phần</a></li>
@@ -1826,7 +1830,8 @@
         <div class="channel-icon"><i data-lucide="pill"
             style="color: var(--gold); width: 36px; height: 36px; display: inline-block;"></i></div>
         <h3>Chuỗi Dược Mỹ Phẩm</h3>
-        <p>Hiện diện tại các chuỗi bán lẻ cao cấp, nơi sản phẩm được định vị ngang hàng với các thương hiệu quốc tế.</p>
+        <p>Hiện diện tại các chuỗi bán lẻ cao cấp, nơi sản phẩm được định vị ngang hàng với các thương hiệu đẳng cấp
+          quốc tế.</p>
         <div class="channel-platforms">
           <span class="platform-tag">Hasaki</span>
           <span class="platform-tag">Guardian</span>
